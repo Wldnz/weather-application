@@ -1,0 +1,50 @@
+<div class="today-weather">
+        <h2>Jakarta</h2>
+        <p>Mostly Sunny</p>
+        <img src="./img/mendung-terang.png" alt="">
+        <h2>23</h2>
+        <p class="description">"Similar temperatures continuing with a chance of rain Monday, Tuesday & Friday."</p>
+        <p class="date">Friday, 26 August 2022 | 10:00</p>
+    </div>
+
+    <div class="other-information">
+        <div class="item">
+            <img src="./img/precipitation.png">
+            <p>30%</p>
+            <p>Precipitation</p>
+        </div>
+        
+        <div class="item">
+            <img src="./img/water.png">
+            <p>80%</p>
+            <p>Humidity</p>
+        </div>
+        
+        <div class="item">
+            <img src="./img/angin.png">
+            <p>9km/h</p>
+            <p>Wind Speed</p>
+        </div>
+    </div>
+
+     <div class="weather-week">
+        <p>Weeks</p>
+        <div class="wrapper">
+            <div class="item">
+                <p>10 AM</p>
+                <img src="./img/mendung-terang.png">
+                <p>23</p>
+            </div>
+        </div>
+    </div>
+
+
+    // days => array
+// days[index].humidity
+// days[index].windspeed
+// days[index].temp
+// days[index].conditions
+// days[index].description
+// resolvedAddress
+// timezone
+//currentConditions
