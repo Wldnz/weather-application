@@ -1,0 +1,69 @@
+# Direktori dan file build
+/build
+/dist
+
+# Direktori node_modules (untuk proyek JavaScript/Node.js)
+node_modules/
+
+# Log file dan temporary files
+*.log
+*.tmp
+*.swp
+
+# Direktori coverage untuk hasil test coverage
+coverage/
+
+# Direktori .env dan file konfigurasi yang berisi kredensial sensitif
+.env
+.env.local
+.env.*.local
+
+# File cache dari sistem operasi
+.DS_Store
+Thumbs.db
+
+# Direktori .vscode atau .idea dari editor code
+.vscode/
+.idea/
+
+# File database sqlite
+*.sqlite
+*.sqlite3
+
+# File output dari Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# File dari editor tertentu
+*.sublime-project
+*.sublime-workspace
+
+# File tertentu dari Visual Studio Code
+*.code-workspace
+
+# Direktori temp
+tmp/
+temp/
+
+# Laporan debugging atau dumps
+*.dmp
+*.stackdump
+
+# Direktori yang dihasilkan oleh build tools
+out/
+bin/
+obj/
+
+# File lock
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Kunci SSH dan file kunci pribadi
+*.pem
+*.key
+
+# File tertentu yang dihasilkan oleh lint tools atau prebuild hooks
+eslintcache
