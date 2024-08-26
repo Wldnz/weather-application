@@ -18,14 +18,15 @@ const footer = `<footer>
 
 const form = document.querySelector('form');
     form.addEventListener('submit',(e) => {
+        console.log(e)
         e.preventDefault();
+
        const searchValue = e.target[0].value;
 
         if(!searchValue || searchValue.length <= 3){
             return
         }
         getResponseWeatherApp({location : searchValue, isOtherDay : false});
-
     })
 
 
@@ -33,7 +34,7 @@ const getResponseWeatherApp = (object) =>{
     console.log(object)
     // return
     fetch(
-        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${object.location}?unitGroup=metric&key=FVPCQLYWXFUNP4WE5F3TGDHCV&contentType=json`
+        `http://localhost:3000/api/v1?search=${object.location}`
     )
 
     .then(response => response.json())
@@ -46,7 +47,8 @@ const getResponseWeatherApp = (object) =>{
             document.body.innerHTML = `${formWeather}${data}${footer}`;
             console.log(data)
         }else{
-            let data = currentWeather(resp.currentConditions,resp.days,resp.resolvedAddress,resp.description)
+            console.log(resp);
+            let data = currentWeather(resp.currentConditions? resp.currentConditions : resp.days[0],resp.days,resp.resolvedAddress,resp.description)
             document.body.innerHTML = `${formWeather}${data}${footer}`;
         }
     })
@@ -78,7 +80,7 @@ const otherInformation = ({precip,humidity,windspeed}) => {
 
 const weatherWeekInformation = (days,location) =>{
 
-    return days.filter((value,index) => index <= weather_week)
+    return days.filter((value,index) => index <= (weather_week - 1))
     .map((dayy,index) => {
         return `
                 <div class="item" data-location="${location.split(',')[0]}" data-index="${index}" onclick=
